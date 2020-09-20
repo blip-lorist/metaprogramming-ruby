@@ -16,6 +16,6 @@ class Entity
   end
 end
 
-new_resource = Entity.new("resources", "some_primary_key")
-new_resource.get("some_primary_key")
-new_resource.set("some_field", "some_value")
+# new_resource = Entity.new("resources", "some_primary_key")
+# new_resource.get("some_primary_key")
+# new_resource.set("some_field", "some_value")
