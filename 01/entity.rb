@@ -1,18 +1,18 @@
 class Entity
-  attr_reader :table, :ident
+  attr_reader :table, :pkey
 
-  def initialize(table, ident)
+  def initialize(table, pkey)
     @table = table
-    @ident = ident
-    puts "INSERT INTO #{@table} (id) VALUES (#{@ident})"
+    @pkey = pkey
+    puts "INSERT INTO #{@table} (id) VALUES (#{@pkey})"
   end
 
   def set(col, val)
-    puts "UPDATE #{@table} SET #{col}='#{val}' WHERE id=#{@ident}"
+    puts "UPDATE #{@table} SET #{col}='#{val}' WHERE id=#{@pkey}"
   end
 
   def get(col)
-    puts "SELECT #{col} FROM #{@table} WHERE id=#{@ident}[0][0]"
+    puts "SELECT #{col} FROM #{@table} WHERE id=#{@pkey}[0][0]"
   end
 end
 
