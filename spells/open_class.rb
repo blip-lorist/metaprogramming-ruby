@@ -1,23 +1,28 @@
-class Numeric
-  def leetspeak_letter
-    number_to_letter = {
-      4 => "A",
-      8 => "B",
-      3 => "E",
-      6 => "G",
-      1 => "I",
-      0 => "O",
-      5 => "S",
-      7 => "T"
+class String
+  def leetspeak
+    letter_to_number = {
+      "A" => 4,
+      "B" => 8,
+      "E" => 3,
+      "G" => 6,
+      "I" => 1,
+      "O" => 0,
+      "S" => 5,
+      "T" => 7,
     }
 
-    if !number_to_letter.keys.include?(self)
-      return nil
+    leetspeak_translation = []
+    self.split("").each do |letter|
+      if letter_to_number.keys.include?(letter)
+        leetspeak_translation.push(letter_to_number[letter].to_s)
+      else
+        leetspeak_translation.push(letter)
+      end
     end
 
-    number_to_letter[self]
+    leetspeak_translation.join("")
   end
 end
 
 
-puts "F#{4.leetspeak_letter}NCY #{0.leetspeak_letter}P#{3.leetspeak_letter}N CL#{4.leetspeak_letter}#{5.leetspeak_letter}#{5.leetspeak_letter}#{3.leetspeak_letter}#{5.leetspeak_letter}"
+puts "FANCY OPEN CLASSES".leetspeak
