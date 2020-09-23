@@ -24,5 +24,4 @@ class String
   end
 end
 
-
 puts "FANCY OPEN CLASSES".leetspeak
