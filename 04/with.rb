@@ -1,4 +1,7 @@
-def with(object)
-  object.dispose
-  return yield if block_given?
+def with(resource)
+  begin
+    yield
+  ensure
+    resource.dispose
+  end
 end
